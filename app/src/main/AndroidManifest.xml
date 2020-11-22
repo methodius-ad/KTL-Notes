@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CurrentNotes">
-        <activity android:name=".screens.NotesEditorActivity"></activity>
+        <activity android:name=".screens.NotesEditorActivity" />
         <activity android:name=".screens.NotelistActivity" />
         <activity android:name=".screens.MainActivity">
             <intent-filter>

@@ -7,7 +7,7 @@ import com.methodius.currentnotes.model.Note
 @Dao
 interface NotesDao {
 
-    @Query("SELECT * FROM notes_table ORDER BY title DESC")
+    @Query("SELECT * FROM notes_table ORDER BY id DESC")
     fun getAllNotes(): LiveData<List<Note>>
 
     @Query("SELECT * FROM notes_table WHERE id = :id")

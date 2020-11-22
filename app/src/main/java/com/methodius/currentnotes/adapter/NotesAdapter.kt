@@ -17,13 +17,15 @@ class NotesAdapter: RecyclerView.Adapter<NotesAdapter.NotesHolder>() {
 class NotesHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
     val title: TextView = itemView.findViewById(R.id.title_text)
 
-    fun f() {
+    fun selectNote(list: List<Note>, position: Int) {
         title.setOnClickListener {
             val context = itemView.context
 
-            val intent: Intent = Intent((Intent(context, NotesEditorActivity::class.java)))
-            intent.putExtra("", title.text)
-
+            val intent = Intent((Intent(context, NotesEditorActivity::class.java)))
+            intent.putExtra("title", list[position].title)
+            intent.putExtra("text", list[position].text)
+            intent.putExtra("id", list[position].id)
+            context.startActivity(intent)
         }
     }
 }
@@ -34,18 +36,16 @@ class NotesHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
     }
 
     override fun onBindViewHolder(holder: NotesHolder, position: Int) {
-        holder.title.text = notesList[position].title
-
-
-        holder.title.setOnClickListener {
-            val context = holder.itemView.context
-
-            val intent = Intent((Intent(context, NotesEditorActivity::class.java)))
-            intent.putExtra("title", notesList[position].title)
-            intent.putExtra("text", notesList[position].text)
-            intent.putExtra("id", notesList[position].id)
-            context.startActivity(intent)
+        val title: String = notesList[position].title
+        val text: String = notesList[position].text
+        if(title.isNotEmpty()) {
+            holder.title.text = title
+        } else {
+            holder.title.text = text
         }
+
+
+        holder.selectNote(notesList, position)
     }
 
     override fun getItemCount(): Int {
@@ -56,7 +56,4 @@ class NotesHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         notesList = list
         notifyDataSetChanged()
     }
-
-
-
 }
