@@ -1,4 +1,4 @@
-package com.methodius.currentnotes
+package com.methodius.currentnotes.screens
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,10 +8,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.methodius.currentnotes.data.AppDatabase
-import com.methodius.currentnotes.data.AppViewModel
-import com.methodius.currentnotes.data.Note
-import com.methodius.currentnotes.data.NotesDao
+import com.methodius.currentnotes.R
+import com.methodius.currentnotes.adapter.NotesAdapter
+import com.methodius.currentnotes.viewmodel.AppViewModel
 
 class NotelistActivity : AppCompatActivity() {
 
@@ -22,10 +21,6 @@ class NotelistActivity : AppCompatActivity() {
         setContentView(R.layout.activity_notelist)
 
         val addButton: FloatingActionButton = findViewById(R.id.add_button)
-        val list: List<Note> = listOf()
-
-
-
 
         val view: RecyclerView = findViewById(R.id.notes_list)
         val adapter = NotesAdapter()
@@ -40,14 +35,5 @@ class NotelistActivity : AppCompatActivity() {
         addButton.setOnClickListener {
             startActivity(Intent(this, NotesEditorActivity::class.java))
         }
-
-
-        //AppDatabase db = App.getInstance().getDatabase();
-        //EmployeeDao employeeDao = db.employeeDao();
-
-    }
-
-    fun db() {
-
     }
 }

@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CurrentNotes">
-        <activity android:name=".NotesEditorActivity"></activity>
-        <activity android:name=".NotelistActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".screens.NotesEditorActivity"></activity>
+        <activity android:name=".screens.NotelistActivity" />
+        <activity android:name=".screens.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

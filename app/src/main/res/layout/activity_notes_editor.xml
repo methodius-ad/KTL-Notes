@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NotesEditorActivity">
+    tools:context=".screens.NotesEditorActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,6 +29,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/button"
+        android:src="@drawable/ic_p_launcher_foreground"/>
 
 </FrameLayout>

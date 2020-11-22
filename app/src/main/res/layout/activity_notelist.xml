@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NotelistActivity">
+    tools:context=".screens.NotelistActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/notes_list"
@@ -17,6 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/button"
+        android:src="@drawable/ok_icon"/>
 
 </FrameLayout>

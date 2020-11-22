@@ -1,4 +1,4 @@
-package com.methodius.currentnotes.data
+package com.methodius.currentnotes.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
